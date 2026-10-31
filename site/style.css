@@ -1,0 +1,76 @@
+:root {
+  --text: #000;
+  --bg: #f6f5ea;
+  --accent: hsl(11.73, 82.49%, 57.45%);
+  --heading: "Space Grotesk", system-ui, sans-serif;
+  --body: "Raleway", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--bg); padding: 8px; }
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+.site-title { font-family: var(--heading); font-size: 1.6rem; font-weight: 500; color: var(--accent); text-decoration: none; }
+.site-header nav { display: flex; gap: 1.75rem; }
+.site-header nav a { text-decoration: none; }
+.site-header nav a { padding-bottom: .1em; }
+.site-header nav a[aria-current] { background: linear-gradient(currentColor, currentColor) 0 calc(100% - .1em) / 100% 1px no-repeat; }
+
+main { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+section { padding: 2.5rem 0; }
+
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin: 0 0 1.25rem;
+  color: var(--accent);
+}
+h3 { font-family: var(--heading); font-weight: 500; font-size: 1.25rem; margin: 1rem 0 .5rem; }
+
+section > p { max-width: 75ch; }
+
+.projects { display: flex; flex-direction: column; gap: 3rem; }
+.projects article { display: grid; grid-template-columns: 285px minmax(0, 600px); gap: 2.5rem; align-items: center; }
+.projects img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; display: block; }
+.projects h3 { margin-top: 0; font-family: var(--body); font-weight: 700; font-size: 1.2rem; }
+.projects p { margin: 0 0 .75rem; }
+.credit { font-size: .85rem; }
+
+.courses { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; max-width: 75ch; }
+.courses h3 { margin: 0; font-family: var(--body); font-weight: 700; font-size: 1.2rem; }
+.courses p { margin: 0 0 .5rem; }
+.course-meta { font-size: .9rem; }
+
+.people { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 2rem 3rem; }
+.people li { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.people img { width: 100%; max-width: 185px; aspect-ratio: 1; object-fit: cover; border-radius: 50%; margin-bottom: .75rem; }
+.people a { font-weight: 700; }
+.people span { font-size: .9rem; }
+
+@media (max-width: 640px) {
+  .projects article { grid-template-columns: 1fr; gap: 1.25rem; }
+  .projects img { max-width: 240px; }
+}
